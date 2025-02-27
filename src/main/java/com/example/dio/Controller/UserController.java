@@ -22,7 +22,11 @@ public class UserController {
     public ResponseEntity<ResponseStruture<String>>registerUser(@RequestBody User user){
         user=userService.registerUser(user);
 
-        return ResponseBuilder.success(HttpStatus.CREATED,"User Created","user");
+
+
+
+
+         return ResponseBuilder.success(HttpStatus.CREATED,"User Created","user");
 
     }
 
