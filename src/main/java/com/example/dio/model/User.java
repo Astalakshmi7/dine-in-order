@@ -34,6 +34,7 @@ public class User {
     private long phoneNo;
 
     @Column(name = "role")
+    @Enumerated(EnumType.STRING)
     private UserRole role;
 
     @Column(name = "create_at")
