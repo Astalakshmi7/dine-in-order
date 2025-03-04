@@ -24,6 +24,7 @@ import java.lang.reflect.Field;
 @RestController
 @AllArgsConstructor
 @Tag(name="User Controller",description = "Collection API endpoints dealing user data.")
+@RequestMapping("/api/vi")
 public class UserController {
 
     private final UserService userService;
