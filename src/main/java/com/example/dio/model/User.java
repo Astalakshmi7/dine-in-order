@@ -25,13 +25,13 @@ public class User {
     private String userName;
 
     @Column(name = "email")
-    private String Email;
+    private String email;
 
     @Column(name = "password")
     private String password;
 
     @Column(name = "phone_no")
-    private long phoneNo;
+    private String phoneNo;
 
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
