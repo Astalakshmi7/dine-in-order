@@ -24,7 +24,7 @@ import java.lang.reflect.Field;
 @RestController
 @AllArgsConstructor
 @Tag(name="User Controller",description = "Collection API endpoints dealing user data.")
-@RequestMapping("/api/vi")
+@RequestMapping("${app.base-url}")
 public class UserController {
 
     private final UserService userService;
@@ -47,7 +47,7 @@ public class UserController {
         UserResponse response = userService.registerUser(registrationRequest);
 
 
-        return ResponseBuilder.success(HttpStatus.CREATED, "User Created",response);
+        return ResponseBuilder.ok("User Created",response);
     }
 
     @GetMapping("/users/{userId}")
