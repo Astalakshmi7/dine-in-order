@@ -39,6 +39,13 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    /**
+     * Registers a new user based on the provided role.
+     *
+     * @param registrationRequest The request containing user registration details.
+     * @return The response containing registered user details.
+     */
+
     @Override
     public UserResponse registerUser(RegistrationRequest registrationRequest) {
 
@@ -49,14 +56,27 @@ public class UserServiceImpl implements UserService {
         return userMapper.mapToUserResponse(user);
 
     }
-
+    /**
+     * Retrieves a user by their unique ID.
+     *
+     * @param userId The unique identifier of the user.
+     * @return The response containing user details if found.
+     * @throws UserNotFoundByIdException If the user is not found by the given ID.
+     */
     @Override
     public UserResponse findUserById(long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundByIdException("Failed to find user,user not found by id"));
         return userMapper.mapToUserResponse(user);
     }
-
+    /**
+     * Updates an existing user's details.
+     *
+     * @param userId     The unique identifier of the user to be updated.
+     * @param userRequest The request containing updated user information.
+     * @return The response containing updated user details.
+     * @throws UserNotFoundByIdException If the user is not found by the given ID.
+     */
     @Override
     public UserResponse updateUserById(long userId, UserRequest userRequest) {
         User user = userRepository.findById(userId)
